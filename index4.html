@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jackson Kelly — Características</title>
+
+  <style>
+    
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial; }
+    body { line-height: 1.6; margin: 0; background: var(--bg); color: var(--fg); }
+
+    /* Tema herdado do index principal */
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --muted: #000000;
+      --card: #f5f5f5;
+      --border: #9c9c9ce8;
+      --accent: #000;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.514);
+      --btn-shadow: 0 0 0 rgb(0, 0, 0);
+    }
+    html[data-theme="dark"] {
+      --bg: #0a0a0a;
+      --fg: #ffffff;
+      --muted: #ffffff;
+      --card: #111111;
+      --border: #141414;
+      --accent: #fff;
+      --shadow: 0 12px 40px rgb(0, 0, 0);
+      --btn-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(180%) blur(6px);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 12px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    nav a:hover {
+      background: var(--card);
+      transform: translateY(-2px);
+    }
+
+    /* Botão tema igual ao index */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: var(--btn-shadow);
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    html[data-theme="light"] .btn {
+      background: #000;
+      color: #fff;
+    }
+    html[data-theme="dark"] .btn {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Hero e conteúdo */
+    .hero {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media(min-width: 900px) {
+      .hero { grid-template-columns: 420px 1fr; align-items: start; }
+    }
+
+    /* Mantém o estilo original dos cards */
+    .card {
+      background: var(--card); /* Mantém cor original controlada pelo tema */
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: clamp(24px, 3vw, 36px);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: var(--fg);
+    }
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    img.guitar-img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 10px 40px rgb(0, 0, 0);
+      max-height: 360px;
+      object-fit: cover;
+    }
+
+    .video-wrap {
+      margin-top: 16px;
+      border-radius: 19px;
+      padding: 6px;
+      background: linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
+      box-shadow: 0 12px 40px rgb(0, 0, 0);
+    }
+    .video-inner {
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg);
+      border: 0px solid var(--border);
+      position: relative;
+    }
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .specs table {
+      width: 100%;
+      border-collapse: collapse;
+      color: var(--fg);
+    }
+    .specs th, .specs td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .specs th {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a href="./index.html">Voltar</a>
+    <a href="./index.html#modelos">Outros Modelos</a>
+  </nav>
+  <button id="btnTema" class="btn">Alternar tema</button>
+</header>
+
+<main class="hero">
+  <div class="card">
+    <h1>Jackson Kelly</h1>
+    <div class="subtitle">Design inspirado no Explorer — agressiva e poderosa</div>
+
+    <center>
+
+    <img src="./midia/jackson-js32t-kelly-satin-black.jpg" alt="" style="width: 395px;">
+
+    </center>
+
+    <div class="video-wrap">
+      <div class="video-inner">
+
+        <a href="https://youtu.be/d4-R4vFj0C4?si=LDdgzJGITETIIdvX" target="_blank">
+          <img src="./midia/c19fe32a2c2979567d731f5362cc2b93.jpg" alt="Vídeo Kelly" style="height: 217px;" width="400px">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card specs">
+    <table>
+      <tr><th>Característica</th><th>Detalhes</th></tr>
+      <tr><td>Tipo de corpo</td><td>Corpo sólido em formato “Kelly”, inspirado no Explorer.</td></tr>
+      <tr><td>Madeira do corpo</td><td>Mahogany ou alder, dependendo do modelo.</td></tr>
+      <tr><td>Braço & construção</td><td>Maple neck-through ou bolt-on em modelos JS; reforço de grafite em todos.</td></tr>
+      <tr><td>Escala</td><td>24 trastes, raio composto, ebony ou rosewood.</td></tr>
+      <tr><td>Inlays</td><td>Pearloid “sharkfin”.</td></tr>
+      <tr><td>Captadores</td><td>HH: Jackson high-output ou EMG ativos; Pro/USA podem ter Seymour Duncan.</td></tr>
+      <tr><td>Ponte</td><td>Floyd Rose licenciado ou recessed; string-through em algumas versões.</td></tr>
+      <tr><td>Nut</td><td>Locking nut Floyd Rose presente em modelos de ponte flutuante.</td></tr>
+      <tr><td>Tarraxas</td><td>Seladas die-cast; Pro/USA com strap-locks Dunlop.</td></tr>
+      <tr><td>Uso recomendado</td><td>Hard rock, metal e shred – design agressivo e sustain prolongado.</td></tr>
+    </table>
+  </div>
+</main>
+
+<script>
+const root=document.documentElement,btn=document.getElementById('btnTema'),THEME_KEY='theme-jackson';
+const saved=localStorage.getItem(THEME_KEY);
+if(saved){root.setAttribute('data-theme',saved);}
+else{root.setAttribute('data-theme','dark');localStorage.setItem(THEME_KEY,'dark');}
+btn.textContent=root.getAttribute('data-theme')==='dark'?'Tema Claro':'Tema Escuro';
+btn.addEventListener('click',()=>{const curr=root.getAttribute('data-theme')==='dark'?'light':'dark';
+root.setAttribute('data-theme',curr);localStorage.setItem(THEME_KEY,curr);
+btn.textContent=curr==='dark'?'Tema Claro':'Tema Escuro';});
+</script>
+</body>
+</html>
